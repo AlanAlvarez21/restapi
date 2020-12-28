@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user.to_json(only: [:id, :username])    #Se utiliza el parametro only, mediante una lista colocamos los atributos que vamos a permitir ser mostrados 
+   # render json: @user.to_json(only: [:id, :username])    Se utiliza el parametro only, mediante una lista colocamos los atributos que vamos a permitir ser mostrados 
+     render  :show
   end
 
   # POST /users
